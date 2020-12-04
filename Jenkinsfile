@@ -23,8 +23,8 @@ pipeline {
          }
          stage('Ansible Deploy') {    
             steps { 
-                 ansiblePlaybook credentialsId: 'b01ed2cc-c8ef-4dcb-895b-c2d05ad8d159', disableHostKeyChecking: true, installation: 'ansible_server', playbook: 'tomcatdeploy/site.yaml'                
-            }
+                                  
+            }ansiblePlaybook credentialsId: '84259fbb-0403-473e-9ae2-2d8105d57402', installation: 'ansible_server', playbook: 'tomcatdeploy/site.yaml'
         }
    }
    	 
