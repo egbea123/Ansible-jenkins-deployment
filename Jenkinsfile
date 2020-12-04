@@ -24,8 +24,8 @@ pipeline {
          }
          stage('Ansible Deploy') {    
             steps { 
-                  // ansiblePlaybook installation: 'ansible_server', playbook: '/var/lib/jenkins/workspace/Ansible-deployment$/tomcatdeploy/site.yaml'
-		    ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible_server', playbook: 'tomcatdeploy/site.yaml'
+   
+		ansiblePlaybook credentialsId: '84259fbb-0403-473e-9ae2-2d8105d57402', disableHostKeyChecking: true, installation: 'ansible_server', playbook: 'tomcatdeploy/site.yaml'    
 	    }
         }
    }
