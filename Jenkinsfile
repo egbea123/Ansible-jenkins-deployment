@@ -23,7 +23,7 @@ pipeline {
          }
          stage('Ansible Deploy') {    
             steps { 
-                 ansiblePlaybook installation: 'ansible_server', playbook: 'tomcatdeploy/site.yaml'
+                 sh 'ansible-playbook tomcatdeploy/site.yaml'
             }
         }
    }
