@@ -18,13 +18,15 @@ pipeline {
    		 }
         stage('checkout') {
            steps {    
-                git branch: 'master', url: 'https://github.com/egbea123/Ansible_Playbook.git'
+               // git branch: 'master', url: 'https://github.com/egbea123/Ansible_Playbook.git'
+		 git 'https://github.com/egbea123/Ansible_Playbook'
             }
          }
          stage('Ansible Deploy') {    
             steps { 
-                   ansiblePlaybook installation: 'ansible_server', playbook: '/var/lib/jenkins/workspace/Ansible-deployment$/tomcatdeploy/site.yaml'
-            }
+                  // ansiblePlaybook installation: 'ansible_server', playbook: '/var/lib/jenkins/workspace/Ansible-deployment$/tomcatdeploy/site.yaml'
+                  ansiblePlaybook installation: 'ansible_server', playbook: 'tomcatdeploy/site.yaml'
+	    }
         }
    }
    	 
