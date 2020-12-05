@@ -25,7 +25,7 @@ pipeline {
          stage('Ansible Deploy') {    
             steps { 
                  sh "echo $PATH"
-		    sh 'ansible-playbook tomcatdeploy/site.yaml'
+		    ansiblePlaybook installation: 'ansible_server', playbook: 'tomcatdeploy/site.yaml'
 		}
         }
    }
