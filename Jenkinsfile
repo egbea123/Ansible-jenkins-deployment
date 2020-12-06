@@ -16,18 +16,6 @@ pipeline {
    				 sh "mvn clean package"          	 
    			 }     	 
    		 }
-        stage('checkout') {
-           steps {    
-               // git branch: 'master', url: 'https://github.com/egbea123/Ansible_Playbook.git'
-		 git 'https://github.com/egbea123/Ansible_Playbook'
-            }
-         }
-         stage('Ansible Deploy') {    
-            steps { 
-                 sh "echo $PATH"
-		    ansiblePlaybook installation: 'ansible_server', playbook: 'tomcatdeploy/site.yaml'
-		}
-        }
    }
    	 
 }
